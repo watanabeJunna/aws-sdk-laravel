@@ -31,4 +31,17 @@ class PocController extends Controller
 
         return view('s3poc', compact('datas', 'service', 'header', 'owner'));
     }
+
+    public function listForecast()
+    {
+        $datas = [
+            "datas" => []
+        ];
+
+        // View Title
+        $service = 'Amazon Forecast';
+        $header = 'Forecast List';
+
+        return view('forecastpoc', compact('datas', 'service', 'header',));
+    }
 }

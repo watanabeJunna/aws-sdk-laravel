@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/poc', 'PocController@listBuckets');
+Route::get('/s3poc', 'PocController@listBuckets');
+
+Route::get('/forecastpoc', 'PocController@listForecast');

@@ -27,10 +27,7 @@
                         <h1 class="md-title">{{ $header }}</h1>
                     </md-table-toolbar>
                     <md-table-row slot="md-table-row" slot-scope="{ item }">
-                        <md-table-cell md-label="ID" md-sort-by="id">{{ $owner['ID'] }}</md-table-cell>
-                        <md-table-cell md-label="DisplayName" md-sort-by="display_name">{{ $owner['DisplayName'] }}</md-table-cell>
-                        <md-table-cell md-label="Name" md-sort-by="name">@{{ item.Name }}</md-table-cell>
-                        <md-table-cell md-label="CreationDate" md-sort-by="creation_date">@{{ item.CreationDate }}</md-table-cell>
+                        <!-- <md-table-cell md-label="ID" md-sort-by="id"></md-table-cell> -->
                     </md-table-row>
                 </md-table>
             </div>
