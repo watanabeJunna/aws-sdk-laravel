@@ -7,13 +7,19 @@ use Illuminate\Support\Facades\App;
 
 class PocController extends Controller
 {
-    public function index()
+    public function listBuckets()
     {
         $client = App::make('aws')->createClient('s3');
 
-        $result = $client->listBuckets([])['Buckets'];
+        $list = $client->listBuckets([]);
 
-        $owner = $client->listBuckets([])['Owner'];
+        if (count($list) !== 0) {
+            $result = $client->listBuckets([])['Buckets'];
+            $owner = $client->listBuckets([])['Owner'];
+        } else {
+            $result = [];
+            $owner = [];
+        }
 
         $datas = [
             'datas' => $result

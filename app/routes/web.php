@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/poc', 'PocController@index');
+Route::get('/poc', 'PocController@listBuckets');
