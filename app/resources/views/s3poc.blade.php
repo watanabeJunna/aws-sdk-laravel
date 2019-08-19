@@ -14,25 +14,23 @@
 
   <body>
     <div id="app">
-        <!-- https://medium.com/codingthesmartway-com-blog/using-material-design-with-vue-js-2-a938eac53112 -->
         <md-card>
             <md-card-header>
                 <div class="md-title">AWk SDK PoC</div>
-                <div class="md-subhead">Service: Amazon Forecast</div>
+                <div class="md-subhead">Service: {{ $service }}</div>
             </md-card-header>
         </md-card>
         <template>
             <div class="datatable">
-                <md-table v-model="users" md-card>
+                <md-table v-model="datas" md-card>
                     <md-table-toolbar>
-                        <h1 class="md-title">予測データ</h1>
+                        <h1 class="md-title">{{ $header }}</h1>
                     </md-table-toolbar>
                     <md-table-row slot="md-table-row" slot-scope="{ item }">
-                        <md-table-cell md-label="ID" md-sort-by="id" md-numeric>@{{ item.id }}</md-table-cell>
-                        <md-table-cell md-label="Name" md-sort-by="name">@{{ item.name }}</md-table-cell>
-                        <md-table-cell md-label="Email" md-sort-by="email">@{{ item.email }}</md-table-cell>
-                        <md-table-cell md-label="Gender" md-sort-by="gender">@{{ item.gender }}</md-table-cell>
-                        <md-table-cell md-label="Job Title" md-sort-by="title">@{{ item.title }}</md-table-cell>
+                        <md-table-cell md-label="ID" md-sort-by="id">{{ $owner['ID'] }}</md-table-cell>
+                        <md-table-cell md-label="DisplayName" md-sort-by="display_name">{{ $owner['DisplayName'] }}</md-table-cell>
+                        <md-table-cell md-label="Name" md-sort-by="name">@{{ item.Name }}</md-table-cell>
+                        <md-table-cell md-label="CreationDate" md-sort-by="creation_date">@{{ item.CreationDate }}</md-table-cell>
                     </md-table-row>
                 </md-table>
             </div>
@@ -43,7 +41,7 @@
 
         new Vue({
             el: '#app',
-            data: () => (@json($data)),
+            data: () => (@json($datas)),
         })
     </script>
   </body>
